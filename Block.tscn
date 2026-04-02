@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cg8svud8kow82"]
+
+[ext_resource type="Script" uid="uid://da8w3v04a4vo1" path="res://Block.cs" id="1_ab6iy"]
+[ext_resource type="Texture2D" uid="uid://cecd148q8coh2" path="res://block.png" id="2_ab6iy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ab6iy"]
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Block" type="Node2D" unique_id=844453827 node_paths=PackedStringArray("HealthDisplay", "Sprite")]
+script = ExtResource("1_ab6iy")
+HealthDisplay = NodePath("Label")
+Sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1658745301]
+texture = ExtResource("2_ab6iy")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=923299797]
+custom_minimum_size = Vector2(16, 15)
+offset_right = 16.0
+offset_bottom = 15.0
+text = "1"
+label_settings = SubResource("LabelSettings_ab6iy")
+horizontal_alignment = 1
+vertical_alignment = 1

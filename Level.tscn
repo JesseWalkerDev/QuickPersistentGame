@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://ceexhx62g7nk6"]
+
+[ext_resource type="Script" uid="uid://bugyyk6nnrvup" path="res://Level.cs" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://cg8svud8kow82" path="res://Block.tscn" id="2_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://db0xvo7w1xf3g" path="res://Player.tscn" id="3_r0du0"]
+[ext_resource type="LabelSettings" uid="uid://dkmlv35082von" path="res://labelSettings.tres" id="4_wkftn"]
+
+[node name="Main" type="Node2D" unique_id=1807700905 node_paths=PackedStringArray("StrengthDisplay", "Timer", "EndScreen")]
+script = ExtResource("1_glv2v")
+BlockScene = ExtResource("2_uu6xs")
+PlayerScene = ExtResource("3_r0du0")
+StrengthDisplay = NodePath("Info/MarginContainer/VBoxContainer/HBoxContainer/Strength")
+Timer = NodePath("Info/MarginContainer/VBoxContainer/HBoxContainer/Time")
+EndScreen = NodePath("End Screen")
+
+[node name="End Screen" type="CenterContainer" parent="." unique_id=1895398699]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(256, 128)
+offset_right = 256.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="End Screen" unique_id=535240775]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="End Screen/PanelContainer" unique_id=849766815]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="End Screen/PanelContainer/MarginContainer" unique_id=778460620]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="End Screen/PanelContainer/MarginContainer/VBoxContainer" unique_id=399516266]
+layout_mode = 2
+text = "Finish"
+label_settings = ExtResource("4_wkftn")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="End Screen/PanelContainer/MarginContainer/VBoxContainer" unique_id=800055756]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="End Screen/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1650225673]
+layout_mode = 2
+text = "Quit [Escape]"
+label_settings = ExtResource("4_wkftn")
+
+[node name="Label2" type="Label" parent="End Screen/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2076210602]
+layout_mode = 2
+text = "Again [Enter]"
+label_settings = ExtResource("4_wkftn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1124948975]
+anchor_mode = 0
+
+[node name="Info" type="Panel" parent="." unique_id=437385653]
+custom_minimum_size = Vector2(256, 32)
+offset_top = 128.0
+offset_right = 256.0
+offset_bottom = 160.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Info" unique_id=1568143329]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 32.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Info/MarginContainer" unique_id=1799036427]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Tip" type="Label" parent="Info/MarginContainer/VBoxContainer" unique_id=2010802657]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Make it to the right before time runs out!"
+label_settings = ExtResource("4_wkftn")
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Info/MarginContainer/VBoxContainer" unique_id=1593979772]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Strength" type="Label" parent="Info/MarginContainer/VBoxContainer/HBoxContainer" unique_id=370530501]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Strength:"
+label_settings = ExtResource("4_wkftn")
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Info/MarginContainer/VBoxContainer/HBoxContainer" unique_id=797547509]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Time:"
+label_settings = ExtResource("4_wkftn")
+vertical_alignment = 1

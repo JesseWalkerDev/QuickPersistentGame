@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://db0xvo7w1xf3g"]
+
+[ext_resource type="Script" uid="uid://bm4vmh6d7vwu6" path="res://Player.cs" id="1_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://ckkjbwg2l31o7" path="res://player.png" id="2_kpjcp"]
+
+[node name="Player" type="Node2D" unique_id=1161884874]
+script = ExtResource("1_kpjcp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1427982956]
+modulate = Color(1, 0.9881667, 0.29000002, 1)
+texture = ExtResource("2_kpjcp")
+centered = false
